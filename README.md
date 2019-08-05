@@ -17,7 +17,7 @@ plotly.offline.init_notebook_mode(connected=True)
 df = pd.read_csv("https://raw.githubusercontent.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/master/data/volcano_db.csv", encoding="iso-8859-1")
 df.head()
 ```
-
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/data_1.png)
 
 A first element we might be interested to collect is the density of volcanos in each country. To do so, let’s start with plotting a histogram which counts the occurrences of each country in our dataset:
 ```Python
@@ -25,12 +25,14 @@ import plotly.express as px
 fig = px.histogram(df, x="Country")
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot1.png)
 
 For a cleaner visualization, we can sort countries in descending order like so:
 ```Python
 fig = px.histogram(df, x="Country").update_xaxes(categoryorder="total descending")
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot2.png)
 
 Furthermore, we can add new features to our histogram. 
 
@@ -45,11 +47,13 @@ values=df['Status'].value_counts()
 fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot3.png)
 
 ```Python
 fig = px.histogram(df, x="Country",color="Status").update_xaxes(categoryorder="total descending")
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot4.png)
 
 With a first glimpse at our graph, we can see that the majority of volcanos are in either Holocene or Historical status.
 
@@ -60,6 +64,7 @@ import plotly.express as px
 fig = px.bar(df, x='Volcano Name', y='Elev', color='Type', height=400)
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot5.png)
 
 Since we have 1454 volcanos, the barplot is hard to interpret. We can zoom in to see the individual volcano details.
 
@@ -78,6 +83,7 @@ fig.update_layout(
     )
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot6.png)
 
 The same result can be obtained with a different layout. The following code shows how to display the volcanos on a 3D globe map:
 
@@ -98,6 +104,7 @@ fig.update_geos(
 )
 fig.show()
 ```
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/plot7.png)
 
 
 Getting new data for volcano and plotting a 3d graph using Plotly
