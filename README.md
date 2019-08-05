@@ -17,7 +17,7 @@ plotly.offline.init_notebook_mode(connected=True)
 df = pd.read_csv("https://raw.githubusercontent.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/master/data/volcano_db.csv", encoding="iso-8859-1")
 df.head()
 ```
-![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/data_1.png)
+![alt text](https://github.com/deepankarkotnala/Volcanic-Data-Visualizations-Plotly/blob/master/images/data_1.PNG)
 
 A first element we might be interested to collect is the density of volcanos in each country. To do so, let’s start with plotting a histogram which counts the occurrences of each country in our dataset:
 ```Python
